@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+    
+        *{
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body{
+            background:url(./pexels-jimmy-elizarraras-613804445-20848564.jpg) center center no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .container{
+            height: auto;
+            width: 900px;
+            margin-top: 3rem;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            background-color: #f4f4f4;
+        }
+
+        form{
+            padding: 20px;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+        h1{
+            font-size: 1.25rem;
+            text-align: center;
+            color: rgb(0, 74, 211);
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label{
+            font-size: 20px;
+            color: #3a6cf5;
+        }
+
+        input{
+            padding: 5px;
+            border: 1px solid #c6c6c6;
+            outline: none;
+            border-radius: 4px;
+            transition: all 0.1s ease-in-out;
+        }
+
+        input:focus{
+            border: 2px solid #3a6cf5;
+        }
+
+        .buttons{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button{
+            font-weight: 600;
+            border-radius:10px ;
+            width: 300px;
+            padding: 10px;
+            background-color: transparent;
+            border: 2px solid #3a6cf5;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover{
+            background-color: #3a6cf5;
+            font-weight: 600;
+            color: #f4f4f4;
+        }
+
+        .container img{
+            border-radius: 10px;
+            height: 100%;
+            width: 50%;
+        }
+
+        #notas{
+            height: auto;
+            width: 900px;
+            display: none;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .infos-alunos{
+            width: 90%;
+            background-color: #c6c6c677;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .container-infos{
+            width: 80%;
+            background-color: #f4f4f4;
+            padding: 5px;
+        }
+
+        .info-aluno ol{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 10px;
+        }
+
+        h3{
+            font-size: 20px;
+            color: #3a6cf5;
+        }
+
+        .aprovado{
+            color: #00ff55;
+            font-weight: bold;
+        }
+
+        .reprovado{
+            color: red;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            form {
+                width: 100%;
+
+            }
+
+            .container img {
+                width: 100%;
+                height: auto;
+            }
+
+            #notas {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px;
+            }
+
+            form {
+                width: 100%;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1rem;
+            }
+
+            label {
+                font-size: 16px;
+            }
+
+            input {
+                width: 80%;
+                padding: 10px;
+            }
+
+            input:focus{
+                border: 2px solid #3a6cf5;
+            }
+
+            button {
+                width: 90%;
+                padding: 10px;
+            }
+        }
+</style>
+</head>
+<body>
+    <div class="container">
+        <img src="pexels-didsss-2675061.jpg" alt="">
+        <form>
+            <legend><h1>Preencha os campos abaixo</h1></legend>
+
+            <div>
+                <label for="nome"><i class='bx bxs-user-badge'></i>| Nome</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome do aluno" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="classe"><i class='bx bxs-graduation'></i>| Classe</label>
+                <input type="text" name="classe" id="classe" placeholder="Classe do aluno" maxlength="2" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="disciplina"><i class='bx bx-book-bookmark'></i>| Disciplina</label>
+                <input type="text" name="serie" id="disciplina" placeholder="Qual a disciplina?" maxlength="3" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="nota"><i class='bx bx-calendar-edit'></i>| Nota</label>
+                <input type="number" name="nota" id="nota" placeholder="Atribua uma nota" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="idade"><i class='bx bx-calendar'></i>| Idade</label>
+                <input type="number" name="idade" id="idade" placeholder="Qual a idade do aluno?" autocomplete="off" required>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" id="btn-lancar">Lançar nota</button>
+                <button type="reset" class="btn-reset">Limpar</button>
+            </div>
+        </form>
+    </div>
+    <div id="notas">
+        <div class="infos-alunos">
+            <h3>Informações do aluno</h3>
+            <div class="container-infos">
+                <div class="info-aluno">
+                    <ol>
+                        <li class="nome-aluno">Nome:</li>
+                        <li class="classe-aluno">Classe:</li>
+                        <li class="idade-aluno">Idade:</li>
+                    </ol>
+            </div>
+            </div>
+        </div>
+        <div class="nota">
+            <h3>Notas</h3>
+          <div class="alunos">
+            <div class="aluno">
+                <ol>
+                    <li class="materia-aluno">Matéria:</li>
+                    <li class="nota-aluno">Nota:</li>
+                </ol>
+            </div>
+          </div>
+        </div>
+        <div id="res"></div>
+        <button id="reset-notas" onclick="fecharPainel()">Fechar</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
